@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAFC3EF81D8DED0A005DF662 /* adjectives.html in Resources */ = {isa = PBXBuildFile; fileRef = BAFC3EF71D8DED0A005DF662 /* adjectives.html */; };
 		EB176A631D8CF354003B7823 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A621D8CF354003B7823 /* Story.swift */; };
 		EB176A661D8CF446003B7823 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A651D8CF446003B7823 /* StoryCell.swift */; };
 		EB176A681D8D5DF4003B7823 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A671D8D5DF4003B7823 /* StoryViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BAFC3EF71D8DED0A005DF662 /* adjectives.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = adjectives.html; path = Lessons/adjectives.html; sourceTree = "<group>"; };
 		EB176A621D8CF354003B7823 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		EB176A651D8CF446003B7823 /* StoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		EB176A671D8D5DF4003B7823 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */,
+				BAFC3EF71D8DED0A005DF662 /* adjectives.html */,
 				EB85769D1D8DB83E0086C8C2 /* numbers.html */,
 			);
 			name = Lessons;
@@ -197,6 +200,7 @@
 				EBAF77CA1D8CF28900786B1D /* LaunchScreen.storyboard in Resources */,
 				EB85769F1D8DB83E0086C8C2 /* numbers.html in Resources */,
 				EBAF77C71D8CF28900786B1D /* Assets.xcassets in Resources */,
+				BAFC3EF81D8DED0A005DF662 /* adjectives.html in Resources */,
 				EB176A771D8D771C003B7823 /* verbs-and-pronouns.html in Resources */,
 				EBAF77C51D8CF28900786B1D /* Main.storyboard in Resources */,
 				EB176A6C1D8D62E8003B7823 /* StoryTextView.xib in Resources */,
