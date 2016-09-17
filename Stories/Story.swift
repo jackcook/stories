@@ -35,6 +35,9 @@ struct Story {
                         "toi": "you"
                     ]),
                 StoryLesson(fileName: "verbs-and-pronouns")
+            ]),
+            Story(thumbnail: #imageLiteral(resourceName: "Story 1 Thumbnail"), name: "Lesson 2", topics: "Numbers", parts: [
+                StoryLesson(fileName: "numbers")
             ])
         ]
     }

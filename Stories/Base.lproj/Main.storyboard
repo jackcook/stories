@@ -8,9 +8,27 @@
     </dependencies>
     <scenes>
         <!--Stories View Controller-->
+        <scene sceneID="Tls-Lu-O8v">
+            <objects>
+                <viewController storyboardIdentifier="StoriesViewController" id="X6X-ah-m6K" customClass="StoriesViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mth-yA-wUa"/>
+                        <viewControllerLayoutGuide type="bottom" id="YkH-Ys-WLZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NcA-R7-Ugq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc3-Ys-LcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="-661"/>
+        </scene>
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="StoriesViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,9 +37,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-iF-ORX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LG-WG-04z">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvt-AO-OYW" customClass="TabBarView" customModule="Stories" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -31,25 +49,43 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qvt-AO-OYW" firstAttribute="top" secondItem="I7W-iF-ORX" secondAttribute="bottom" id="0op-rh-CPU"/>
                             <constraint firstItem="qvt-AO-OYW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9gV-ed-kdZ"/>
-                            <constraint firstAttribute="trailing" secondItem="I7W-iF-ORX" secondAttribute="trailing" id="FHj-Ve-Gtu"/>
+                            <constraint firstAttribute="trailing" secondItem="9LG-WG-04z" secondAttribute="trailing" id="CQQ-48-F4X"/>
+                            <constraint firstItem="9LG-WG-04z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OD6-bk-sAc"/>
                             <constraint firstAttribute="trailing" secondItem="qvt-AO-OYW" secondAttribute="trailing" id="QqF-YB-5hJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qvt-AO-OYW" secondAttribute="bottom" id="SB4-e9-zu6"/>
-                            <constraint firstItem="I7W-iF-ORX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Tks-CA-Rct"/>
-                            <constraint firstItem="I7W-iF-ORX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nzn-be-hTc"/>
+                            <constraint firstItem="9LG-WG-04z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VXJ-RH-gX3"/>
+                            <constraint firstItem="qvt-AO-OYW" firstAttribute="top" secondItem="9LG-WG-04z" secondAttribute="bottom" id="YYp-A8-6vZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CQX-Jh-tjn"/>
                     <connections>
                         <outlet property="bottomBar" destination="qvt-AO-OYW" id="V42-Nj-D7G"/>
-                        <outlet property="tableView" destination="I7W-iF-ORX" id="6a0-vo-NgP"/>
+                        <outlet property="contentView" destination="9LG-WG-04z" id="kMe-QO-mFR"/>
                         <segue destination="m0A-nm-EjN" kind="show" identifier="storySegue" id="UIJ-UL-OSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032.8" y="37.331334332833585"/>
+        </scene>
+        <!--Flashcards View Controller-->
+        <scene sceneID="nv1-s5-ChD">
+            <objects>
+                <viewController storyboardIdentifier="FlashcardsViewController" id="XVz-PI-CIt" customClass="FlashcardsViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xqi-1M-HXb"/>
+                        <viewControllerLayoutGuide type="bottom" id="IZD-gH-o4p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iyH-Zt-UQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WHf-1O-m31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="747"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="32a-78-b7d">
