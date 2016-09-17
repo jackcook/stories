@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2m4-NH-vcM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,17 +20,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CQX-Jh-tjn"/>
                     <connections>
                         <segue destination="m0A-nm-EjN" kind="show" identifier="storySegue" id="UIJ-UL-OSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1032.8" y="37.331334332833585"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="32a-78-b7d">
             <objects>
-                <viewController id="m0A-nm-EjN" customClass="StoryViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="m0A-nm-EjN" customClass="StoryViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P9U-3e-xMR"/>
                         <viewControllerLayoutGuide type="bottom" id="BnA-AI-gHx"/>
@@ -38,7 +41,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-EI-GXB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-EI-GXB"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4K9-q0-haX">
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ivB-sO-J7k">
@@ -48,10 +51,23 @@
                                             <action selector="pageControlUpdatedWithSender:" destination="m0A-nm-EjN" eventType="valueChanged" id="ugf-2T-tHP"/>
                                         </connections>
                                     </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c3-yj-5jh">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7c3-yj-5jh" secondAttribute="height" multiplier="1:1" id="2mq-02-oMZ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                        <state key="normal" image="Back Arrow"/>
+                                        <connections>
+                                            <action selector="closeButtonPressedWithSender:" destination="m0A-nm-EjN" eventType="touchUpInside" id="v58-jX-4wR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="4E3-lS-JD2"/>
+                                    <constraint firstItem="7c3-yj-5jh" firstAttribute="top" secondItem="4K9-q0-haX" secondAttribute="top" id="Vxy-ZD-xBX"/>
+                                    <constraint firstAttribute="bottom" secondItem="7c3-yj-5jh" secondAttribute="bottom" id="cU7-lz-yq9"/>
+                                    <constraint firstItem="7c3-yj-5jh" firstAttribute="leading" secondItem="4K9-q0-haX" secondAttribute="leading" id="ubz-yj-LcW"/>
                                     <constraint firstItem="ivB-sO-J7k" firstAttribute="centerX" secondItem="4K9-q0-haX" secondAttribute="centerX" id="v5C-L5-I4V"/>
                                     <constraint firstItem="ivB-sO-J7k" firstAttribute="centerY" secondItem="4K9-q0-haX" secondAttribute="centerY" id="vgi-8z-jEY"/>
                                 </constraints>
@@ -76,7 +92,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Blt-jB-8aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="37"/>
+            <point key="canvasLocation" x="1984.8" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="51l-U2-RD2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2m4-NH-vcM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SYp-mK-HIX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZVL-fg-HAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8n-Y7-M6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back Arrow" width="32" height="32"/>
+    </resources>
 </document>

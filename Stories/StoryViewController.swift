@@ -52,6 +52,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         container.contentSize = CGSize(width: container.bounds.width * CGFloat(pageControl.numberOfPages), height: container.bounds.height)
     }
     
+    @IBAction func closeButtonPressed(sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func pageControlUpdated(sender: UIPageControl) {
         let frame = CGRect(x: container.bounds.width * CGFloat(pageControl.currentPage), y: 0, width: container.bounds.width, height: container.bounds.height)
         container.scrollRectToVisible(frame, animated: true)
