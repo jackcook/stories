@@ -12,9 +12,9 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
     
     @IBOutlet weak var textView: UITextView!
     
-    var text: String! {
+    var reading: StoryReading! {
         didSet {
-            textView.text = text
+            textView.text = reading.text
         }
     }
     
@@ -24,7 +24,6 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
         super.awakeFromNib()
         
         textView.layoutManager.delegate = self
-        textView.text = text
         
         let tgr = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
         textView.addGestureRecognizer(tgr)
@@ -62,6 +61,6 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
         
         let wordFrame = convert(textView.firstRect(for: range), from: textView)
         tooltipView.focusPoint = CGPoint(x: wordFrame.origin.x + wordFrame.size.width / 2, y: wordFrame.origin.y)
-        tooltipView.text = word
+        tooltipView.text = reading.translations[word.lowercased()] ?? word.lowercased()
     }
 }

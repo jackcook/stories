@@ -28,17 +28,16 @@ class TooltipView: UIView {
     
     init() {
         label = UILabel()
+        label.font = UIFont(name: "Georgia", size: 18)
         label.text = ""
-        label.textColor = UIColor.white
+        label.textColor = UIColor.black
         
         super.init(frame: CGRect.zero)
         
         addSubview(label)
-        backgroundColor = UIColor.darkGray
+        backgroundColor = UIColor.white
         
-        layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 2
-        layer.cornerRadius = 8
+        layer.cornerRadius = 2
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,5 +55,12 @@ class TooltipView: UIView {
         label.frame = CGRect(x: (size.width - label.bounds.width) / 2, y: (size.height - label.bounds.height) / 2, width: label.bounds.width, height: label.bounds.height)
         
         frame = CGRect(x: focusPoint.x - size.width / 2, y: focusPoint.y - size.height - 4, width: size.width, height: size.height)
+        
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowOpacity = 0.15
+        layer.shadowPath = shadowPath.cgPath
     }
 }

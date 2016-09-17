@@ -26,7 +26,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         for part in story.parts {
             if let part = part as? StoryReading {
                 let textView = Bundle.main.loadNibNamed("StoryTextView", owner: self, options: nil)![0] as! StoryTextView
-                textView.text = part.text
+                textView.reading = part
                 storyViews.append(textView)
             } else if let part = part as? StoryLesson {
                 let lessonView = Bundle.main.loadNibNamed("StoryLessonView", owner: self, options: nil)![0] as! StoryLessonView
