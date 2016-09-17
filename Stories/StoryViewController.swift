@@ -14,6 +14,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var bottomBar: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var story: Story!
+    
     fileprivate var storyViews = [UIView]()
     
     override func viewDidLoad() {
@@ -21,11 +23,17 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         
         container.delegate = self
         
-        let textView = Bundle.main.loadNibNamed("StoryTextView", owner: self, options: nil)![0] as! StoryTextView
-        storyViews.append(textView)
-        
-        let lessonView = Bundle.main.loadNibNamed("StoryLessonView", owner: self, options: nil)![0] as! StoryLessonView
-        storyViews.append(lessonView)
+        for part in story.parts {
+            if let part = part as? StoryReading {
+                let textView = Bundle.main.loadNibNamed("StoryTextView", owner: self, options: nil)![0] as! StoryTextView
+                textView.text = part.text
+                storyViews.append(textView)
+            } else if let part = part as? StoryLesson {
+                let lessonView = Bundle.main.loadNibNamed("StoryLessonView", owner: self, options: nil)![0] as! StoryLessonView
+                lessonView.fileName = part.fileName
+                storyViews.append(lessonView)
+            }
+        }
         
         for (idx, view) in storyViews.enumerated() {
             container.addSubview(view)

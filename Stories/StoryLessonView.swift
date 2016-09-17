@@ -12,10 +12,12 @@ class StoryLessonView: UIView {
     
     @IBOutlet weak var webView: UIWebView!
     
+    var fileName: String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        guard let path = Bundle.main.path(forResource: "verbs-and-pronouns", ofType: "html") else {
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "html") else {
             return
         }
         

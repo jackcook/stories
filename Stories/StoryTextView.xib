@@ -14,13 +14,6 @@
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-75-9Xc">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Marie: Salut Jean. Ça va?
-Jean: Ça va bien, merci. Et toi, ça va?
-Marie: Pas mal.
-Jean: Quoi de neuf?
-Marie: Pas grand-chose.
-Marie: Au revoir Jean.
-Jean: Au revoir, à demain.</string>
                     <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="19"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

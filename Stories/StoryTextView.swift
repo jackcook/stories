@@ -12,13 +12,19 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
     
     @IBOutlet weak var textView: UITextView!
     
+    var text: String! {
+        didSet {
+            textView.text = text
+        }
+    }
+    
     fileprivate var tooltipView: TooltipView!
-    fileprivate var tooltipLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         textView.layoutManager.delegate = self
+        textView.text = text
         
         let tgr = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
         textView.addGestureRecognizer(tgr)
@@ -32,21 +38,6 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
             tooltipView.text = ""
             addSubview(tooltipView)
         }
-        
-//        if tooltipView == nil {
-//            tooltipView = UIView()
-//            tooltipView.backgroundColor = UIColor.black
-//            tooltipView.frame = CGRect.zero
-//            addSubview(tooltipView)
-//        }
-//        
-//        if tooltipLabel == nil {
-//            tooltipLabel = UILabel()
-//            tooltipLabel.textColor = UIColor.white
-//            tooltipView.addSubview(tooltipLabel)
-//        }
-//        tooltipLabel.sizeToFit()
-//        tooltipLabel.frame = CGRect(x: (tooltipView.bounds.width - tooltipLabel.bounds.width) / 2, y: (tooltipView.bounds.height - tooltipLabel.bounds.height) / 2, width: tooltipLabel.bounds.width, height: tooltipLabel.bounds.height)
     }
     
     func layoutManager(_ layoutManager: NSLayoutManager, lineSpacingAfterGlyphAt glyphIndex: Int, withProposedLineFragmentRect rect: CGRect) -> CGFloat {
@@ -69,18 +60,8 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
             return
         }
         
-//        tooltipLabel.text = word
-//        tooltipLabel.sizeToFit()
-        
         let wordFrame = convert(textView.firstRect(for: range), from: textView)
         tooltipView.focusPoint = CGPoint(x: wordFrame.origin.x + wordFrame.size.width / 2, y: wordFrame.origin.y)
         tooltipView.text = word
-        
-//        let tooltipWidth = tooltipLabel.bounds.width + 16
-//        tooltipView.frame = CGRect(x: wordFrame.origin.x + (wordFrame.size.width - tooltipWidth) / 2, y: wordFrame.origin.y - tooltipLabel.bounds.height - 12, width: tooltipWidth, height: tooltipLabel.bounds.height + 8)
-//        
-//        setNeedsLayout()
-        
-        print("\(word): \(CGPoint(x: wordFrame.origin.x + wordFrame.size.width / 2, y: wordFrame.origin.y))")
     }
 }

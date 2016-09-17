@@ -13,6 +13,8 @@ class StoriesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomBar: TabBarView!
     
+    fileprivate var storyToSend: Story?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,14 +36,24 @@ class StoriesViewController: UIViewController, UITableViewDataSource, UITableVie
         bottomBar.layer.shadowPath = bottomShadowPath.cgPath
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let story = storyToSend else {
+            return
+        }
+        
+        if let svc = segue.destination as? StoryViewController {
+            svc.story = story
+        }
+    }
+    
     // MARK: UITableViewDataSource Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return Story.stories().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = StoryCell(story: Story.getFirstStory())
+        let cell = StoryCell(story: Story.stories()[indexPath.row])
         return cell
     }
     
@@ -52,6 +64,7 @@ class StoriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        storyToSend = Story.stories()[indexPath.row]
         performSegue(withIdentifier: "storySegue", sender: self)
     }
 }
