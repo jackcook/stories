@@ -24,15 +24,26 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         let textView = Bundle.main.loadNibNamed("StoryTextView", owner: self, options: nil)![0] as! StoryTextView
         storyViews.append(textView)
         
-        for view in storyViews {
+        let lessonView = Bundle.main.loadNibNamed("StoryLessonView", owner: self, options: nil)![0] as! StoryLessonView
+        storyViews.append(lessonView)
+        
+        for (idx, view) in storyViews.enumerated() {
             container.addSubview(view)
+            view.frame = CGRect(x: container.bounds.width * CGFloat(idx), y: 0, width: container.bounds.width, height: container.bounds.height)
         }
         
-        pageControl.numberOfPages = 3
+        pageControl.numberOfPages = storyViews.count
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        let shadowPath = UIBezierPath(rect: bottomBar.bounds).cgPath
+        bottomBar.layer.masksToBounds = false
+        bottomBar.layer.shadowColor = UIColor.black.cgColor
+        bottomBar.layer.shadowOffset = CGSize(width: 0, height: -2)
+        bottomBar.layer.shadowOpacity = 0.15
+        bottomBar.layer.shadowPath = shadowPath
         
         for (idx, view) in storyViews.enumerated() {
             view.frame = CGRect(x: container.bounds.width * CGFloat(idx), y: 0, width: container.bounds.width, height: container.bounds.height)

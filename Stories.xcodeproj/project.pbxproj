@@ -13,6 +13,9 @@
 		EB176A681D8D5DF4003B7823 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A671D8D5DF4003B7823 /* StoryViewController.swift */; };
 		EB176A6A1D8D62D5003B7823 /* StoryTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A691D8D62D5003B7823 /* StoryTextView.swift */; };
 		EB176A6C1D8D62E8003B7823 /* StoryTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB176A6B1D8D62E8003B7823 /* StoryTextView.xib */; };
+		EB176A701D8D75F1003B7823 /* StoryLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A6F1D8D75F1003B7823 /* StoryLessonView.swift */; };
+		EB176A721D8D7602003B7823 /* StoryLessonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB176A711D8D7602003B7823 /* StoryLessonView.xib */; };
+		EB176A771D8D771C003B7823 /* verbs-and-pronouns.html in Resources */ = {isa = PBXBuildFile; fileRef = EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */; };
 		EBAF77C01D8CF28900786B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */; };
 		EBAF77C51D8CF28900786B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAF77C31D8CF28900786B1D /* Main.storyboard */; };
 		EBAF77C71D8CF28900786B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBAF77C61D8CF28900786B1D /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		EB176A671D8D5DF4003B7823 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		EB176A691D8D62D5003B7823 /* StoryTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTextView.swift; sourceTree = "<group>"; };
 		EB176A6B1D8D62E8003B7823 /* StoryTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryTextView.xib; sourceTree = "<group>"; };
+		EB176A6F1D8D75F1003B7823 /* StoryLessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryLessonView.swift; sourceTree = "<group>"; };
+		EB176A711D8D7602003B7823 /* StoryLessonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryLessonView.xib; sourceTree = "<group>"; };
+		EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "verbs-and-pronouns.html"; path = "Lessons/verbs-and-pronouns.html"; sourceTree = "<group>"; };
 		EBAF77BC1D8CF28900786B1D /* Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBAF77C41D8CF28900786B1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +66,18 @@
 				EB176A651D8CF446003B7823 /* StoryCell.swift */,
 				EB176A691D8D62D5003B7823 /* StoryTextView.swift */,
 				EB176A6B1D8D62E8003B7823 /* StoryTextView.xib */,
+				EB176A6F1D8D75F1003B7823 /* StoryLessonView.swift */,
+				EB176A711D8D7602003B7823 /* StoryLessonView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EB176A751D8D7716003B7823 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */,
+			);
+			name = Lessons;
 			sourceTree = "<group>";
 		};
 		EBAF77B31D8CF28900786B1D = {
@@ -83,6 +99,7 @@
 		EBAF77BE1D8CF28900786B1D /* Stories */ = {
 			isa = PBXGroup;
 			children = (
+				EB176A751D8D7716003B7823 /* Lessons */,
 				EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */,
 				EB176A5F1D8CF312003B7823 /* View Controllers */,
 				EB176A641D8CF43D003B7823 /* Views */,
@@ -155,8 +172,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB176A721D8D7602003B7823 /* StoryLessonView.xib in Resources */,
 				EBAF77CA1D8CF28900786B1D /* LaunchScreen.storyboard in Resources */,
 				EBAF77C71D8CF28900786B1D /* Assets.xcassets in Resources */,
+				EB176A771D8D771C003B7823 /* verbs-and-pronouns.html in Resources */,
 				EBAF77C51D8CF28900786B1D /* Main.storyboard in Resources */,
 				EB176A6C1D8D62E8003B7823 /* StoryTextView.xib in Resources */,
 			);
@@ -170,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB176A681D8D5DF4003B7823 /* StoryViewController.swift in Sources */,
+				EB176A701D8D75F1003B7823 /* StoryLessonView.swift in Sources */,
 				EB176A611D8CF31E003B7823 /* StoriesViewController.swift in Sources */,
 				EBAF77C01D8CF28900786B1D /* AppDelegate.swift in Sources */,
 				EB176A631D8CF354003B7823 /* Story.swift in Sources */,
