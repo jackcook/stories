@@ -29,6 +29,8 @@ class StoriesViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.frame = CGRect(x: 0, y: 20, width: view.bounds.width, height: view.bounds.height - 20)
     }
     
+    // MARK: UITableViewDataSource Methods
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -38,7 +40,13 @@ class StoriesViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    // MARK: UITableViewDelegate Methods
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "storySegue", sender: self)
     }
 }

@@ -19,9 +19,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="m0A-nm-EjN" kind="show" identifier="storySegue" id="UIJ-UL-OSl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="32a-78-b7d">
+            <objects>
+                <viewController id="m0A-nm-EjN" customClass="StoryViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P9U-3e-xMR"/>
+                        <viewControllerLayoutGuide type="bottom" id="BnA-AI-gHx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kK3-Ix-4c6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4K9-q0-haX">
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ivB-sO-J7k">
+                                        <color key="pageIndicatorTintColor" red="0.67843137254901964" green="0.69019607843137254" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.019607843137254902" green="0.023529411764705882" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="pageControlUpdatedWithSender:" destination="m0A-nm-EjN" eventType="valueChanged" id="ugf-2T-tHP"/>
+                                        </connections>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="4E3-lS-JD2"/>
+                                    <constraint firstItem="ivB-sO-J7k" firstAttribute="centerX" secondItem="4K9-q0-haX" secondAttribute="centerX" id="v5C-L5-I4V"/>
+                                    <constraint firstItem="ivB-sO-J7k" firstAttribute="centerY" secondItem="4K9-q0-haX" secondAttribute="centerY" id="vgi-8z-jEY"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-EI-GXB"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4K9-q0-haX" secondAttribute="trailing" id="FGa-p4-Frn"/>
+                            <constraint firstItem="Ohq-EI-GXB" firstAttribute="leading" secondItem="kK3-Ix-4c6" secondAttribute="leading" id="LiE-rG-sjH"/>
+                            <constraint firstItem="BnA-AI-gHx" firstAttribute="top" secondItem="4K9-q0-haX" secondAttribute="bottom" id="UPJ-4T-SMW"/>
+                            <constraint firstItem="4K9-q0-haX" firstAttribute="leading" secondItem="kK3-Ix-4c6" secondAttribute="leading" id="YQN-ZQ-1dx"/>
+                            <constraint firstItem="4K9-q0-haX" firstAttribute="top" secondItem="Ohq-EI-GXB" secondAttribute="bottom" id="cvs-zT-qef"/>
+                            <constraint firstAttribute="trailing" secondItem="Ohq-EI-GXB" secondAttribute="trailing" id="piT-Yf-kas"/>
+                            <constraint firstItem="Ohq-EI-GXB" firstAttribute="top" secondItem="P9U-3e-xMR" secondAttribute="bottom" id="sfp-kq-SUd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBar" destination="4K9-q0-haX" id="nDl-MJ-yp3"/>
+                        <outlet property="container" destination="Ohq-EI-GXB" id="SIy-U8-BpU"/>
+                        <outlet property="pageControl" destination="ivB-sO-J7k" id="O59-sS-XOI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Blt-jB-8aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="37"/>
         </scene>
     </scenes>
 </document>
