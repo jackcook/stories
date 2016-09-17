@@ -36,8 +36,28 @@ struct Story {
                     ]),
                 StoryLesson(fileName: "verbs-and-pronouns")
             ]),
-            Story(thumbnail: #imageLiteral(resourceName: "Story 1 Thumbnail"), name: "Lesson 2", topics: "Numbers", parts: [
+            Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", parts: [
+                StoryReading(text:[
+                        "Marie: Bonjour mon ami! Comment ça va?",
+                        "Jean: Salut! Ça va bien, merci. Et toi?",
+                        "Marie: Ça va bien. Quelle est la date?",
+                        "Jean: Aujourd'hui est le dix-sept Septembre, deux milleseize.",
+                        "Marie: Pouvez-vous aller au supermarché pour acheter moi des fruits? Le pique-nique est aujourd'hui!",
+                        "Jean: Oui! Quels fruits?",
+                        "Marie: Je voudrais deux pommes, cinq poires, et sept oranges, s'il vous plaît.",
+                        "Jean: Combien ça vont coûter en tout?",
+                        "Marie: Je pense que c'est quinze (15) francs.",
+                        "Jean: À quelle distance se trouve le supermarché?",
+                        "Marie: Il se trouve à vingt (20) minutes à pied, c'est sur rue cent-dix. Merci Beaucoup!",
+                        "Jean: De rien!"
+                    ].joined(separator: "\n"),
+                    translations: [
+                        "":"",
+                    ]),
                 StoryLesson(fileName: "numbers")
+            ]),
+            Story(thumbnail: #imageLiteral(resourceName: "Story 3 Thumbnail"), name: "Lesson 3", topics: "Adjectives", parts: [
+                StoryLesson(fileName: "adjectives")
             ])
         ]
     }
