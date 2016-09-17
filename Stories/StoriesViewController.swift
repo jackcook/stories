@@ -10,23 +10,28 @@ import UIKit
 
 class StoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    fileprivate var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomBar: TabBarView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let tabs = [Tab(name: "Lessons", image: #imageLiteral(resourceName: "Book")), Tab(name: "Flashcards", image: #imageLiteral(resourceName: "Flashcard"))]
+        bottomBar.updateTabs(tabs: tabs)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        if tableView == nil {
-            tableView = UITableView()
-            tableView.dataSource = self
-            tableView.delegate = self
-            tableView.separatorStyle = .none
-            view.addSubview(tableView)
-        }
-        tableView.frame = CGRect(x: 0, y: 20, width: view.bounds.width, height: view.bounds.height - 20)
+        let bottomShadowPath = UIBezierPath(rect: bottomBar.bounds)
+        bottomBar.layer.masksToBounds = false
+        bottomBar.layer.shadowColor = UIColor.black.cgColor
+        bottomBar.layer.shadowOffset = CGSize(width: 0, height: -1)
+        bottomBar.layer.shadowOpacity = 0.15
+        bottomBar.layer.shadowPath = bottomShadowPath.cgPath
     }
     
     // MARK: UITableViewDataSource Methods

@@ -16,6 +16,9 @@
 		EB176A701D8D75F1003B7823 /* StoryLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A6F1D8D75F1003B7823 /* StoryLessonView.swift */; };
 		EB176A721D8D7602003B7823 /* StoryLessonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB176A711D8D7602003B7823 /* StoryLessonView.xib */; };
 		EB176A771D8D771C003B7823 /* verbs-and-pronouns.html in Resources */ = {isa = PBXBuildFile; fileRef = EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */; };
+		EB176A791D8D83E3003B7823 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A781D8D83E3003B7823 /* TabView.swift */; };
+		EB176A7B1D8D8403003B7823 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A7A1D8D8403003B7823 /* TabBarView.swift */; };
+		EB85769B1D8DA2770086C8C2 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB85769A1D8DA2770086C8C2 /* TooltipView.swift */; };
 		EBAF77C01D8CF28900786B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */; };
 		EBAF77C51D8CF28900786B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAF77C31D8CF28900786B1D /* Main.storyboard */; };
 		EBAF77C71D8CF28900786B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBAF77C61D8CF28900786B1D /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		EB176A6F1D8D75F1003B7823 /* StoryLessonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryLessonView.swift; sourceTree = "<group>"; };
 		EB176A711D8D7602003B7823 /* StoryLessonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryLessonView.xib; sourceTree = "<group>"; };
 		EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "verbs-and-pronouns.html"; path = "Lessons/verbs-and-pronouns.html"; sourceTree = "<group>"; };
+		EB176A781D8D83E3003B7823 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		EB176A7A1D8D8403003B7823 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		EB85769A1D8DA2770086C8C2 /* TooltipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		EBAF77BC1D8CF28900786B1D /* Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBAF77C41D8CF28900786B1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +74,9 @@
 				EB176A6B1D8D62E8003B7823 /* StoryTextView.xib */,
 				EB176A6F1D8D75F1003B7823 /* StoryLessonView.swift */,
 				EB176A711D8D7602003B7823 /* StoryLessonView.xib */,
+				EB176A781D8D83E3003B7823 /* TabView.swift */,
+				EB176A7A1D8D8403003B7823 /* TabBarView.swift */,
+				EB85769A1D8DA2770086C8C2 /* TooltipView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -189,9 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB176A681D8D5DF4003B7823 /* StoryViewController.swift in Sources */,
+				EB176A7B1D8D8403003B7823 /* TabBarView.swift in Sources */,
 				EB176A701D8D75F1003B7823 /* StoryLessonView.swift in Sources */,
+				EB176A791D8D83E3003B7823 /* TabView.swift in Sources */,
 				EB176A611D8CF31E003B7823 /* StoriesViewController.swift in Sources */,
 				EBAF77C01D8CF28900786B1D /* AppDelegate.swift in Sources */,
+				EB85769B1D8DA2770086C8C2 /* TooltipView.swift in Sources */,
 				EB176A631D8CF354003B7823 /* Story.swift in Sources */,
 				EB176A661D8CF446003B7823 /* StoryCell.swift in Sources */,
 				EB176A6A1D8D62D5003B7823 /* StoryTextView.swift in Sources */,

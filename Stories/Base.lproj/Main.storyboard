@@ -10,7 +10,7 @@
         <!--Stories View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StoriesViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="StoriesViewController" customModule="Stories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,10 +18,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-iF-ORX">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvt-AO-OYW" customClass="TabBarView" customModule="Stories" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="IBb-L3-O3q"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qvt-AO-OYW" firstAttribute="top" secondItem="I7W-iF-ORX" secondAttribute="bottom" id="0op-rh-CPU"/>
+                            <constraint firstItem="qvt-AO-OYW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9gV-ed-kdZ"/>
+                            <constraint firstAttribute="trailing" secondItem="I7W-iF-ORX" secondAttribute="trailing" id="FHj-Ve-Gtu"/>
+                            <constraint firstAttribute="trailing" secondItem="qvt-AO-OYW" secondAttribute="trailing" id="QqF-YB-5hJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qvt-AO-OYW" secondAttribute="bottom" id="SB4-e9-zu6"/>
+                            <constraint firstItem="I7W-iF-ORX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Tks-CA-Rct"/>
+                            <constraint firstItem="I7W-iF-ORX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nzn-be-hTc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CQX-Jh-tjn"/>
                     <connections>
+                        <outlet property="bottomBar" destination="qvt-AO-OYW" id="V42-Nj-D7G"/>
+                        <outlet property="tableView" destination="I7W-iF-ORX" id="6a0-vo-NgP"/>
                         <segue destination="m0A-nm-EjN" kind="show" identifier="storySegue" id="UIJ-UL-OSl"/>
                     </connections>
                 </viewController>

@@ -38,12 +38,12 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let shadowPath = UIBezierPath(rect: bottomBar.bounds).cgPath
+        let shadowPath = UIBezierPath(rect: bottomBar.bounds)
         bottomBar.layer.masksToBounds = false
         bottomBar.layer.shadowColor = UIColor.black.cgColor
-        bottomBar.layer.shadowOffset = CGSize(width: 0, height: -2)
+        bottomBar.layer.shadowOffset = CGSize(width: 0, height: -1)
         bottomBar.layer.shadowOpacity = 0.15
-        bottomBar.layer.shadowPath = shadowPath
+        bottomBar.layer.shadowPath = shadowPath.cgPath
         
         for (idx, view) in storyViews.enumerated() {
             view.frame = CGRect(x: container.bounds.width * CGFloat(idx), y: 0, width: container.bounds.width, height: container.bounds.height)
