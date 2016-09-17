@@ -15,6 +15,6 @@ struct Story {
     var topics: String
     
     static func getFirstStory() -> Story {
-        return Story(thumbnail: #imageLiteral(resourceName: "story_1_thumbnail"), name: "Chapter 1", topics: "Greetings")
+        return Story(thumbnail: #imageLiteral(resourceName: "Story 1 Thumbnail"), name: "Chapter 1", topics: "Greetings")
     }
 }
