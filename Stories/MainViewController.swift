@@ -40,8 +40,7 @@ class MainViewController: UIViewController, TabBarViewDelegate, UITableViewDataS
         storiesView.frame = contentView.bounds
         
         if flashcardsView == nil {
-            flashcardsView = UIView()
-            flashcardsView.backgroundColor = UIColor.white
+            flashcardsView = FlashcardsView()
             contentView.insertSubview(flashcardsView, belowSubview: storiesView)
         }
         flashcardsView.frame = contentView.bounds

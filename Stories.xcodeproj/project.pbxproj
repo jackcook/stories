@@ -20,6 +20,8 @@
 		EB85769B1D8DA2770086C8C2 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB85769A1D8DA2770086C8C2 /* TooltipView.swift */; };
 		EB85769F1D8DB83E0086C8C2 /* numbers.html in Resources */ = {isa = PBXBuildFile; fileRef = EB85769D1D8DB83E0086C8C2 /* numbers.html */; };
 		EB8576A31D8DBBCF0086C8C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8576A21D8DBBCF0086C8C2 /* MainViewController.swift */; };
+		EB8576A51D8DD09C0086C8C2 /* FlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8576A41D8DD09C0086C8C2 /* FlashcardsView.swift */; };
+		EB8576A71D8DD25C0086C8C2 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8576A61D8DD25C0086C8C2 /* FlashcardView.swift */; };
 		EBAF77C01D8CF28900786B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */; };
 		EBAF77C51D8CF28900786B1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBAF77C31D8CF28900786B1D /* Main.storyboard */; };
 		EBAF77C71D8CF28900786B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBAF77C61D8CF28900786B1D /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		EB85769A1D8DA2770086C8C2 /* TooltipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		EB85769D1D8DB83E0086C8C2 /* numbers.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = numbers.html; path = Lessons/numbers.html; sourceTree = "<group>"; };
 		EB8576A21D8DBBCF0086C8C2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EB8576A41D8DD09C0086C8C2 /* FlashcardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardsView.swift; sourceTree = "<group>"; };
+		EB8576A61D8DD25C0086C8C2 /* FlashcardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		EBAF77BC1D8CF28900786B1D /* Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAF77BF1D8CF28900786B1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBAF77C41D8CF28900786B1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				EB176A781D8D83E3003B7823 /* TabView.swift */,
 				EB176A7A1D8D8403003B7823 /* TabBarView.swift */,
 				EB85769A1D8DA2770086C8C2 /* TooltipView.swift */,
+				EB8576A41D8DD09C0086C8C2 /* FlashcardsView.swift */,
+				EB8576A61D8DD25C0086C8C2 /* FlashcardView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -201,6 +207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8576A51D8DD09C0086C8C2 /* FlashcardsView.swift in Sources */,
+				EB8576A71D8DD25C0086C8C2 /* FlashcardView.swift in Sources */,
 				EB176A681D8D5DF4003B7823 /* StoryViewController.swift in Sources */,
 				EB176A7B1D8D8403003B7823 /* TabBarView.swift in Sources */,
 				EB176A701D8D75F1003B7823 /* StoryLessonView.swift in Sources */,
