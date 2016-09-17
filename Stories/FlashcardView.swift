@@ -10,10 +10,13 @@ import UIKit
 
 class FlashcardView: UIView {
     
-    var frontView: UIView!
-    var frontLabel: UILabel!
-    var backView: UIView!
-    var backLabel: UILabel!
+    fileprivate var frontView: UIView!
+    fileprivate var frontLabel: UILabel!
+    
+    fileprivate var backView: UIView!
+    fileprivate var backLabel: UILabel!
+    fileprivate var dontKnowButton: UIButton!
+    fileprivate var knowButton: UIButton!
     
     fileprivate var word: String!
     fileprivate var translation: String!
@@ -67,6 +70,43 @@ class FlashcardView: UIView {
         }
         backLabel.sizeToFit()
         backLabel.frame = CGRect(x: (backView.bounds.width - backLabel.bounds.width) / 2, y: (backView.bounds.height - backLabel.bounds.height) / 2, width: backLabel.bounds.width, height: backLabel.bounds.height)
+        
+        if dontKnowButton == nil {
+            dontKnowButton = UIButton()
+            dontKnowButton.backgroundColor = UIColor.main
+            dontKnowButton.layer.cornerRadius = 4
+            dontKnowButton.setTitle("Don't know", for: .normal)
+            dontKnowButton.setTitleColor(UIColor.white, for: .normal)
+            dontKnowButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+            backView.addSubview(dontKnowButton)
+        }
+        let buttonSize = CGSize(width: (bounds.width - 16 * 3) / 2, height: 42)
+        dontKnowButton.frame = CGRect(x: 16, y: bounds.height - 16 - buttonSize.height, width: buttonSize.width, height: buttonSize.height)
+        
+        let dontKnowShadowPath = UIBezierPath(rect: dontKnowButton.bounds)
+        dontKnowButton.layer.masksToBounds = false
+        dontKnowButton.layer.shadowColor = UIColor.black.cgColor
+        dontKnowButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        dontKnowButton.layer.shadowOpacity = 0.3
+        dontKnowButton.layer.shadowPath = dontKnowShadowPath.cgPath
+        
+        if knowButton == nil {
+            knowButton = UIButton()
+            knowButton.backgroundColor = UIColor.main
+            knowButton.layer.cornerRadius = 4
+            knowButton.setTitle("Know", for: .normal)
+            knowButton.setTitleColor(UIColor.white, for: .normal)
+            knowButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+            backView.addSubview(knowButton)
+        }
+        knowButton.frame = CGRect(x: bounds.width / 2 + 8, y: bounds.height - 16 - buttonSize.height, width: buttonSize.width, height: buttonSize.height)
+        
+        let knowShadowPath = UIBezierPath(rect: knowButton.bounds)
+        knowButton.layer.masksToBounds = false
+        knowButton.layer.shadowColor = UIColor.black.cgColor
+        knowButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        knowButton.layer.shadowOpacity = 0.3
+        knowButton.layer.shadowPath = knowShadowPath.cgPath
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -84,4 +124,6 @@ class FlashcardView: UIView {
             }, completion: nil)
         }
     }
+    
+    
 }
