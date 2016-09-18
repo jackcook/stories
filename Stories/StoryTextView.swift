@@ -59,11 +59,12 @@ class StoryTextView: UIView, NSLayoutManagerDelegate {
             return
         }
         
-        let wordFrame = convert(textView.firstRect(for: range), from: textView)
-        tooltipView.focusPoint = CGPoint(x: wordFrame.origin.x + wordFrame.size.width / 2, y: wordFrame.origin.y)
-        
-        if let word = reading.translations[word.lowercased()] {
-            tooltipView.text = word
+        if let translation = reading.translations[word.lowercased()] {
+            let wordFrame = convert(textView.firstRect(for: range), from: textView)
+            tooltipView.focusPoint = CGPoint(x: wordFrame.origin.x + wordFrame.size.width / 2, y: wordFrame.origin.y)
+            tooltipView.text = translation
+        } else {
+            tooltipView.text = nil
         }
     }
 }

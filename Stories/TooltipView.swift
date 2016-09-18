@@ -17,8 +17,10 @@ class TooltipView: UIView {
         }
     }
     
-    var text: String = "" {
+    var text: String? = nil {
         didSet {
+            alpha = text == nil ? 0 : 1
+            
             setNeedsLayout()
             layoutIfNeeded()
         }
