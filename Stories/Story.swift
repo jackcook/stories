@@ -13,11 +13,28 @@ struct Story {
     var thumbnail: UIImage
     var name: String
     var topics: String
+    var backgroundColor: UIColor
     var parts: [StoryPart]
+    
+    var darkerColor: UIColor {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        
+//        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+//        
+//        if backgroundColor.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
+//            return UIColor(hue: h, saturation: s, brightness: b - 0.2, alpha: a)
+//        }
+        
+        if backgroundColor.getRed(&r, green: &g, blue: &b, alpha: &a) {
+            return UIColor(red: max(r - 0.2, 0), green: max(g - 0.2, 0), blue: max(b - 0.2, 0), alpha: a)
+        }
+        
+        return UIColor.black
+    }
     
     static func stories() -> [Story] {
         return [
-            Story(thumbnail: #imageLiteral(resourceName: "Story 1 Thumbnail"), name: "Lesson 1", topics: "Greetings", parts: [
+            Story(thumbnail: #imageLiteral(resourceName: "Story 1 Thumbnail"), name: "Lesson 1", topics: "Greetings", backgroundColor: UIColor(red: 243/255, green: 250/255, blue: 254/255, alpha: 1), parts: [
                 StoryReading(text: [
                         "Marie: Salut Jean. Ça va?",
                         "Jean: Ça va bien, merci. Et toi, ça va?",
@@ -36,7 +53,7 @@ struct Story {
                     ]),
                 StoryLesson(fileName: "verbs-and-pronouns")
             ]),
-            Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", parts: [
+            Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", backgroundColor: UIColor.white, parts: [
                 StoryReading(text:[
                         "Marie: Bonjour mon ami! Comment ça va?",
                         "Jean: Salut! Ça va bien, merci. Et toi?",
@@ -56,7 +73,7 @@ struct Story {
                     ]),
                 StoryLesson(fileName: "numbers")
             ]),
-            Story(thumbnail: #imageLiteral(resourceName: "Story 3 Thumbnail"), name: "Lesson 3", topics: "Adjectives", parts: [
+            Story(thumbnail: #imageLiteral(resourceName: "Story 3 Thumbnail"), name: "Lesson 3", topics: "Adjectives", backgroundColor: UIColor.white, parts: [
                 StoryLesson(fileName: "adjectives")
             ])
         ]

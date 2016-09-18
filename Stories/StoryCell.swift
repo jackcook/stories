@@ -36,8 +36,10 @@ class StoryCell: UITableViewCell {
         
         if container == nil {
             container = UIView()
-            container.backgroundColor = UIColor(red: 243/255, green: 250/255, blue: 254/255, alpha: 1)
+            container.backgroundColor = story.backgroundColor
             container.clipsToBounds = true
+            container.layer.borderColor = story.darkerColor.cgColor
+            container.layer.borderWidth = 2
             container.layer.cornerRadius = 12
             addSubview(container)
         }
@@ -52,7 +54,7 @@ class StoryCell: UITableViewCell {
         
         if bottomContainer == nil {
             bottomContainer = UIView()
-            bottomContainer.backgroundColor = UIColor(red: 206/255, green: 227/255, blue: 237/255, alpha: 1)
+            bottomContainer.backgroundColor = story.darkerColor
             container.addSubview(bottomContainer)
         }
         bottomContainer.frame = CGRect(x: 0, y: container.bounds.height * (2/3), width: container.bounds.width, height: container.bounds.height * (1/3))

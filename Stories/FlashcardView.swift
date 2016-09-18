@@ -47,7 +47,7 @@ class FlashcardView: UIView {
         
         if frontLabel == nil {
             frontLabel = UILabel()
-            frontLabel.font = UIFont(name: "Georgia", size: 36)
+            frontLabel.font = UIFont.systemFont(ofSize: 42)
             frontLabel.text = word
             frontLabel.textColor = UIColor.black
             frontView.addSubview(frontLabel)
@@ -63,7 +63,7 @@ class FlashcardView: UIView {
         
         if backLabel == nil {
             backLabel = UILabel()
-            backLabel.font = UIFont(name: "Georgia", size: 36)
+            backLabel.font = UIFont.systemFont(ofSize: 42)
             backLabel.text = translation
             backLabel.textColor = UIColor.black
             backView.addSubview(backLabel)
@@ -73,6 +73,7 @@ class FlashcardView: UIView {
         
         if dontKnowButton == nil {
             dontKnowButton = UIButton()
+            dontKnowButton.addTarget(self, action: #selector(dontKnowButtonPressed(sender:)), for: .touchUpInside)
             dontKnowButton.backgroundColor = UIColor.main
             dontKnowButton.layer.cornerRadius = 4
             dontKnowButton.setTitle("Don't know", for: .normal)
@@ -92,6 +93,7 @@ class FlashcardView: UIView {
         
         if knowButton == nil {
             knowButton = UIButton()
+            knowButton.addTarget(self, action: #selector(knowButtonPressed(sender:)), for: .touchUpInside)
             knowButton.backgroundColor = UIColor.main
             knowButton.layer.cornerRadius = 4
             knowButton.setTitle("Know", for: .normal)
@@ -125,5 +127,11 @@ class FlashcardView: UIView {
         }
     }
     
+    @objc fileprivate func dontKnowButtonPressed(sender: UIButton) {
+        NotificationCenter.default.post(name: FlashcardsView.dontKnowFlashcard, object: nil)
+    }
     
+    @objc fileprivate func knowButtonPressed(sender: UIButton) {
+        NotificationCenter.default.post(name: FlashcardsView.knowFlashcard, object: nil)
+    }
 }
