@@ -67,15 +67,40 @@ struct Story {
                         "Jean: Oui! Quels fruits?",
                         "Marie: Je voudrais deux pommes, cinq poires, et sept oranges, s'il vous plaît.",
                         "Jean: Combien ça vont coûter en tout?",
-                        "Marie: Je pense que c'est quinze (15) francs.",
+                        "Marie: Je pense que c'est quinze francs.",
                         "Jean: À quelle distance se trouve le supermarché?",
-                        "Marie: Il se trouve à vingt (20) minutes à pied, c'est sur rue cent-dix. Merci Beaucoup!",
+                        "Marie: Il se trouve à vingt minutes à pied, c'est sur rue cent-dix. Merci Beaucoup!",
                         "Jean: De rien!"
                     ].joined(separator: "\n"),
                     translations: [
-                        "":"",
+                        "mon":"my",
+                        "la":"the",
+                        "le":"the",
+                        "ami":"friend",
+                        "comment":"how",
+                        "quelle":"what",
+                        "est":"is",
+                        "aujourd'hui":"today",
+                        "supermarché":"supermarket",
+                        "pique-nique":"picnic",
+                        "pommes":"apples",
+                        "poires":"pears",
+                        "plaît":"please",
+                        "trouve":"find",
+                        "acheter":"buy",
+                        "vont":"will",
+                        "combien":"how much",
+                        "coûter":"cost",
+                        "merci":"thank you",
+                        "beaucoup":"very much"
                     ]),
-                StoryLesson(fileName: "numbers")
+                StoryLesson(fileName: "numbers"),
+                StoryExercises(prompts: [
+                    ("What is dix-sept?","nombre","17"),
+                    ("What is the cent-dix?","nombre","110"),
+                    ("What is quarante-quatre?","nombre","44"),
+                    ("What is soixante-quinze?","nombre","75")
+                ])
             ]),
             Story(thumbnail: #imageLiteral(resourceName: "Story 3 Thumbnail"), name: "Lesson 3", topics: "Adjectives", backgroundColor: UIColor.white, parts: [
                 StoryLesson(fileName: "adjectives")
