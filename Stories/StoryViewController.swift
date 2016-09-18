@@ -32,6 +32,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 let lessonView = Bundle.main.loadNibNamed("StoryLessonView", owner: self, options: nil)![0] as! StoryLessonView
                 lessonView.fileName = part.fileName
                 storyViews.append(lessonView)
+            } else if let part = part as? StoryExercises {
+                let exercisesView = ExercisesView()
+                exercisesView.exercises = ["test1": "test2"]
+                storyViews.append(exercisesView)
             }
         }
         

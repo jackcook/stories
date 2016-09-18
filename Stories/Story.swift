@@ -51,7 +51,8 @@ struct Story {
                         "quoi": "what",
                         "toi": "you"
                     ]),
-                StoryLesson(fileName: "verbs-and-pronouns")
+                StoryLesson(fileName: "verbs-and-pronouns"),
+                StoryExercises()
             ]),
             Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", backgroundColor: UIColor.white, parts: [
                 StoryReading(text:[
@@ -93,6 +94,6 @@ struct StoryLesson: StoryPart {
     var fileName: String
 }
 
-struct StoryExercise: StoryPart {
+struct StoryExercises: StoryPart {
     
 }

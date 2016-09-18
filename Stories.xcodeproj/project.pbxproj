@@ -18,6 +18,9 @@
 		EB176A771D8D771C003B7823 /* verbs-and-pronouns.html in Resources */ = {isa = PBXBuildFile; fileRef = EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */; };
 		EB176A791D8D83E3003B7823 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A781D8D83E3003B7823 /* TabView.swift */; };
 		EB176A7B1D8D8403003B7823 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB176A7A1D8D8403003B7823 /* TabBarView.swift */; };
+		EB7D6F231D8E49CE00A38625 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7D6F221D8E49CE00A38625 /* ExercisesView.swift */; };
+		EB7D6F251D8E4C0600A38625 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7D6F241D8E4C0600A38625 /* ExerciseView.swift */; };
+		EB7D6F271D8E4DB600A38625 /* ExerciseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7D6F261D8E4DB600A38625 /* ExerciseView.xib */; };
 		EB85769B1D8DA2770086C8C2 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB85769A1D8DA2770086C8C2 /* TooltipView.swift */; };
 		EB85769F1D8DB83E0086C8C2 /* numbers.html in Resources */ = {isa = PBXBuildFile; fileRef = EB85769D1D8DB83E0086C8C2 /* numbers.html */; };
 		EB8576A31D8DBBCF0086C8C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8576A21D8DBBCF0086C8C2 /* MainViewController.swift */; };
@@ -42,6 +45,9 @@
 		EB176A761D8D771C003B7823 /* verbs-and-pronouns.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "verbs-and-pronouns.html"; path = "Lessons/verbs-and-pronouns.html"; sourceTree = "<group>"; };
 		EB176A781D8D83E3003B7823 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		EB176A7A1D8D8403003B7823 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		EB7D6F221D8E49CE00A38625 /* ExercisesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
+		EB7D6F241D8E4C0600A38625 /* ExerciseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		EB7D6F261D8E4DB600A38625 /* ExerciseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseView.xib; sourceTree = "<group>"; };
 		EB85769A1D8DA2770086C8C2 /* TooltipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		EB85769D1D8DB83E0086C8C2 /* numbers.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = numbers.html; path = Lessons/numbers.html; sourceTree = "<group>"; };
 		EB8576A21D8DBBCF0086C8C2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,9 @@
 				EB85769A1D8DA2770086C8C2 /* TooltipView.swift */,
 				EB8576A41D8DD09C0086C8C2 /* FlashcardsView.swift */,
 				EB8576A61D8DD25C0086C8C2 /* FlashcardView.swift */,
+				EB7D6F221D8E49CE00A38625 /* ExercisesView.swift */,
+				EB7D6F241D8E4C0600A38625 /* ExerciseView.swift */,
+				EB7D6F261D8E4DB600A38625 /* ExerciseView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			files = (
 				EB176A721D8D7602003B7823 /* StoryLessonView.xib in Resources */,
 				EBAF77CA1D8CF28900786B1D /* LaunchScreen.storyboard in Resources */,
+				EB7D6F271D8E4DB600A38625 /* ExerciseView.xib in Resources */,
 				EB85769F1D8DB83E0086C8C2 /* numbers.html in Resources */,
 				EBAF77C71D8CF28900786B1D /* Assets.xcassets in Resources */,
 				BAFC3EF81D8DED0A005DF662 /* adjectives.html in Resources */,
@@ -223,9 +233,11 @@
 				EB8576A31D8DBBCF0086C8C2 /* MainViewController.swift in Sources */,
 				EB176A791D8D83E3003B7823 /* TabView.swift in Sources */,
 				EBAF77C01D8CF28900786B1D /* AppDelegate.swift in Sources */,
+				EB7D6F251D8E4C0600A38625 /* ExerciseView.swift in Sources */,
 				EB85769B1D8DA2770086C8C2 /* TooltipView.swift in Sources */,
 				EB176A631D8CF354003B7823 /* Story.swift in Sources */,
 				EB176A661D8CF446003B7823 /* StoryCell.swift in Sources */,
+				EB7D6F231D8E49CE00A38625 /* ExercisesView.swift in Sources */,
 				EB176A6A1D8D62D5003B7823 /* StoryTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
