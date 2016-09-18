@@ -12,30 +12,38 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QMj-nf-uct">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="What pronoun would you use to address a 4 year-old?" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMj-nf-uct">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0M0-yd-PMC">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0M0-yd-PMC">
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="4bQ-k8-Yyn"/>
                         <constraint firstAttribute="width" constant="96" id="fEK-BC-67T"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                 </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cp-Rg-imc">
+                    <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="2r8-vF-teF"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0M0-yd-PMC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0Zx-rl-knW"/>
+                <constraint firstItem="8Cp-Rg-imc" firstAttribute="leading" secondItem="0M0-yd-PMC" secondAttribute="leading" id="247-Qo-PoR"/>
                 <constraint firstItem="0M0-yd-PMC" firstAttribute="leading" secondItem="QMj-nf-uct" secondAttribute="trailing" constant="16" id="C4M-v9-n4T"/>
                 <constraint firstItem="QMj-nf-uct" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Hnm-es-zuM"/>
                 <constraint firstAttribute="bottom" secondItem="QMj-nf-uct" secondAttribute="bottom" constant="8" id="O9a-Yy-Fi8"/>
                 <constraint firstItem="QMj-nf-uct" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Zbk-Z4-QkM"/>
                 <constraint firstAttribute="trailing" secondItem="0M0-yd-PMC" secondAttribute="trailing" constant="16" id="d4x-cn-Ebl"/>
+                <constraint firstItem="8Cp-Rg-imc" firstAttribute="trailing" secondItem="0M0-yd-PMC" secondAttribute="trailing" id="fEY-5i-UqM"/>
+                <constraint firstItem="8Cp-Rg-imc" firstAttribute="top" secondItem="0M0-yd-PMC" secondAttribute="bottom" constant="-2" id="vn9-42-fY8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

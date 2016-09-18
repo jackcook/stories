@@ -34,7 +34,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 storyViews.append(lessonView)
             } else if let part = part as? StoryExercises {
                 let exercisesView = ExercisesView()
-                exercisesView.exercises = ["test1": "test2"]
+                exercisesView.exercises = part.prompts
                 storyViews.append(exercisesView)
             }
         }

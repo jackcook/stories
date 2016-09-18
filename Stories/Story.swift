@@ -52,7 +52,9 @@ struct Story {
                         "toi": "you"
                     ]),
                 StoryLesson(fileName: "verbs-and-pronouns"),
-                StoryExercises()
+                StoryExercises(prompts: [
+                    ("What pronoun would you use to address a 4 year-old?", "pronom", "tu")
+                ])
             ]),
             Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", backgroundColor: UIColor.white, parts: [
                 StoryReading(text:[
@@ -95,5 +97,5 @@ struct StoryLesson: StoryPart {
 }
 
 struct StoryExercises: StoryPart {
-    
+    var prompts: [(String, String, String)]
 }
