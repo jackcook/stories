@@ -54,7 +54,9 @@ struct Story {
                 StoryLesson(fileName: "verbs-and-pronouns"),
                 StoryExercises(prompts: [
                     ("What pronoun would you use to address a 4 year-old?", "pronom", "tu"),
-                    ("What pronoun would you use to address the President of the United States?", "pronom", "vous")
+                    ("What pronoun would you use to address the President of the United States?", "pronom", "vous"),
+                    ("What pronoun would you use to address your cousin?", "pronom", "tu"),
+                    ("What pronoun is the translation for \"he\"?", "pronom", "il")
                 ])
             ]),
             Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", backgroundColor: UIColor.white, parts: [
@@ -73,26 +75,27 @@ struct Story {
                         "Jean: De rien!"
                     ].joined(separator: "\n"),
                     translations: [
-                        "mon":"my",
-                        "la":"the",
-                        "le":"the",
-                        "ami":"friend",
-                        "comment":"how",
-                        "quelle":"what",
-                        "est":"is",
-                        "aujourd'hui":"today",
-                        "supermarché":"supermarket",
-                        "pique-nique":"picnic",
-                        "pommes":"apples",
-                        "poires":"pears",
-                        "plaît":"please",
-                        "trouve":"find",
-                        "acheter":"buy",
-                        "vont":"will",
-                        "combien":"how much",
-                        "coûter":"cost",
-                        "merci":"thank you",
-                        "beaucoup":"very much"
+                        "mon": "my",
+                        "la": "the",
+                        "le": "the",
+                        "ami": "friend",
+                        "comment": "how",
+                        "quelle": "what",
+                        "est": "is",
+                        "aujourd'hui": "today",
+                        "supermarché": "supermarket",
+                        "pique-nique": "picnic",
+                        "pommes": "apples",
+                        "poires": "pears",
+                        "plaît": "please",
+                        "trouve": "find",
+                        "acheter": "buy",
+                        "vont": "will",
+                        "combien": "how much",
+                        "coûter": "cost",
+                        "merci": "thank you",
+                        "beaucoup": "very much",
+                        "cinq": "five"
                     ]),
                 StoryLesson(fileName: "numbers"),
                 StoryExercises(prompts: [
