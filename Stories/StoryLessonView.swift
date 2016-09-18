@@ -26,7 +26,14 @@ class StoryLessonView: UIView {
                 print("error retrieving contents of file: \(path)")
             }
             
-            webView.loadHTMLString(contents, baseURL: nil)
+            let localPath = Bundle.main.bundlePath
+            let baseURL = URL(fileURLWithPath: localPath)
+            
+            webView.loadHTMLString(contents, baseURL: baseURL)
         }
+    }
+    
+    override func awakeFromNib() {
+        webView.backgroundColor = UIColor.white
     }
 }
