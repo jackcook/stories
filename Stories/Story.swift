@@ -53,7 +53,8 @@ struct Story {
                     ]),
                 StoryLesson(fileName: "verbs-and-pronouns"),
                 StoryExercises(prompts: [
-                    ("What pronoun would you use to address a 4 year-old?", "pronom", "tu")
+                    ("What pronoun would you use to address a 4 year-old?", "pronom", "tu"),
+                    ("What pronoun would you use to address the President of the United States?", "pronom", "vous")
                 ])
             ]),
             Story(thumbnail: #imageLiteral(resourceName: "Story 2 Thumbnail"), name: "Lesson 2", topics: "Numbers", backgroundColor: UIColor.white, parts: [

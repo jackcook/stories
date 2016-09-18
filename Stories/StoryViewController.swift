@@ -6,6 +6,7 @@
 //  Copyright © 2016 Jack Cook. All rights reserved.
 //
 
+import SVProgressHUD
 import UIKit
 
 class StoryViewController: UIViewController, UIScrollViewDelegate {
@@ -45,6 +46,18 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         }
         
         pageControl.numberOfPages = storyViews.count
+        
+        NotificationCenter.default.addObserver(forName: ExercisesView.finishedExercises, object: nil, queue: OperationQueue.main) { (notification) in
+            let _ = self.navigationController?.popViewController(animated: true)
+            
+            DispatchQueue.main.async {
+                SVProgressHUD.showSuccess(withStatus: "\(self.story.name) Complete")
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                SVProgressHUD.dismiss()
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {

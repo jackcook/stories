@@ -6,9 +6,12 @@
 //  Copyright © 2016 Jack Cook. All rights reserved.
 //
 
+import SVProgressHUD
 import UIKit
 
 class ExercisesView: UIView {
+    
+    static let finishedExercises = Notification.Name("finishedExercises")
     
     var exercises: [(String, String, String)]!
     
@@ -16,6 +19,8 @@ class ExercisesView: UIView {
     
     init() {
         super.init(frame: CGRect.zero)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nextExercise(notification:)), name: ExerciseView.nextExercise, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,6 +62,32 @@ class ExercisesView: UIView {
             scrollView.addSubview(view)
         } else {
             super.addSubview(view)
+        }
+    }
+    
+    @objc fileprivate func nextExercise(notification: Notification) {
+        var next = false
+        
+        for view in scrollView.subviews where view is ExerciseView {
+            if next {
+                (view as? ExerciseView)?.answerField.becomeFirstResponder()
+                next = false
+                break
+            }
+            
+            if view.tag == notification.object as? Int {
+                next = true
+            }
+        }
+        
+        if next {
+            NotificationCenter.default.post(name: ExercisesView.finishedExercises, object: nil)
+        } else {
+            SVProgressHUD.showSuccess(withStatus: "Correct")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                SVProgressHUD.dismiss()
+            }
         }
     }
 }

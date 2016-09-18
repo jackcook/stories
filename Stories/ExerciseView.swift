@@ -6,9 +6,12 @@
 //  Copyright © 2016 Jack Cook. All rights reserved.
 //
 
+import SVProgressHUD
 import UIKit
 
 class ExerciseView: UIView, UITextFieldDelegate {
+    
+    static let nextExercise = Notification.Name("nextExercise")
     
     @IBOutlet weak var questionTextView: UITextView!
     @IBOutlet weak var answerField: UITextField!
@@ -34,7 +37,20 @@ class ExerciseView: UIView, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("\(answerField.text! == answer ? "" : "in")correct")
+        let correct = answerField.text ?? "" == answer
+        
+        DispatchQueue.main.async {
+            if correct {
+                NotificationCenter.default.post(name: ExerciseView.nextExercise, object: self.tag)
+            } else {
+                SVProgressHUD.showError(withStatus: "Incorrect")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    SVProgressHUD.dismiss()
+                }
+            }
+        }
+        
         return true
     }
 }
